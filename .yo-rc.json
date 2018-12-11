@@ -1,0 +1,8 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorEmail": "gilad215@gmail.com",
+      "authorUrl": "https://github.com/glekner/generator-react-domain"
+    }
+  }
+}

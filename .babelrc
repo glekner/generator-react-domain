@@ -1,3 +1,21 @@
 {
-  "presets": ["env"]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": true
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ],
+  "ignore": [
+    "**/templates/*"
+  ]
 }

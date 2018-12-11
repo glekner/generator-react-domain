@@ -2,41 +2,98 @@
   "name": "generator-react-domain",
   "version": "0.1.0",
   "description": "Generate React Components with Domain-Driven File Structuring",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/glekner/generator-react-domain.git"
-  },
+  "homepage": "https://github.com/glekner/generator-react-domain#readme",
+  "author": "Gilad Lekner",
   "files": [
     "generators"
   ],
+  "main": "index.js",
   "keywords": [
     "react",
     "generator",
     "domain",
     "component",
+    "yeoman-generator",
     "yeoman-generator"
   ],
-  "author": "Gilad Lekner",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/glekner/generator-react-domain/issues"
-  },
-  "homepage": "https://github.com/glekner/generator-react-domain#readme",
-  "dependencies": {
-    "yeoman-generator": "^3.1.1"
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-patternfly-react": "^0.2.0",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.2.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "scripts": {
+    "build": "babel src -d generators --copy-files",
+    "test": "jest",
+    "pretest": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glekner/generator-react-domain.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glekner/generator-react-domain/issues"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.11",
+    "to-pascal-case": "^1.0.0",
+    "yeoman-generator": "^2.0.1",
+    "yosay": "^2.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "generators/**/*.js",
+      "!generators/**/templates/**/*"
+    ],
+    "coverageReporters": [
+      "lcov"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
   }
 }
