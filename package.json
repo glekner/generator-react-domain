@@ -1,0 +1,42 @@
+{
+  "name": "generator-react-domain",
+  "version": "0.1.0",
+  "description": "Generate React Components with Domain-Driven File Structuring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glekner/generator-react-domain.git"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "react",
+    "generator",
+    "domain",
+    "component",
+    "yeoman-generator"
+  ],
+  "author": "Gilad Lekner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glekner/generator-react-domain/issues"
+  },
+  "homepage": "https://github.com/glekner/generator-react-domain#readme",
+  "dependencies": {
+    "yeoman-generator": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-patternfly-react": "^0.2.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
