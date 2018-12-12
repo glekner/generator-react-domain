@@ -1,3 +1,4 @@
-node_modules
-generators
+lib
 coverage
+node_modules
+

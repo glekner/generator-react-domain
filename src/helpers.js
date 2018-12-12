@@ -10,4 +10,4 @@ export const getEntryAndNameFromInput = (input) => {
   return { entry, name };
 };
 
-export const toCamelCase = str => camelCase(str);
+export { toPascalCase, camelCase };

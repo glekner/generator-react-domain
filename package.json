@@ -5,7 +5,7 @@
   "homepage": "https://github.com/glekner/generator-react-domain#readme",
   "author": "Gilad Lekner",
   "files": [
-    "generators"
+    "lib/generators"
   ],
   "main": "index.js",
   "keywords": [
@@ -37,9 +37,10 @@
     "npm": ">= 4.0.0"
   },
   "scripts": {
-    "build": "babel src -d generators --copy-files",
+    "build": "babel src -d lib/generators --copy-files",
     "test": "jest",
-    "pretest": "eslint ."
+    "pretest": "eslint .",
+    "start": "npm run build && sudo npm link && yo react-domain"
   },
   "repository": {
     "type": "git",

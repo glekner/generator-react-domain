@@ -1,5 +1,5 @@
-export const entriesPath = 'src/components';
+export const componentsPath = 'src/components';
 
 export default {
-  entriesPath,
+  componentsPath,
 };
