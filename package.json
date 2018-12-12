@@ -64,8 +64,8 @@
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "generators/**/*.js",
-      "!generators/**/templates/**/*"
+      "src/**/*.js",
+      "!src/**/templates/**/*"
     ],
     "coverageReporters": [
       "lcov"

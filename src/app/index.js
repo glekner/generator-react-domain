@@ -1,10 +1,9 @@
 import Generator from 'yeoman-generator';
 import chalk from 'chalk';
-import yosay from 'yosay';
 
 class InitialGenerator extends Generator {
   async prompting() {
-    this.log(yosay(`Welcome to ${chalk.blue('react-domain')} generator!`));
+    this.log((`\nWelcome to ${chalk.blue('react-domain-generator')}!\n`));
 
     const prompts = [
       {
@@ -19,6 +18,11 @@ class InitialGenerator extends Generator {
         name: 'name',
         message: 'Enter your Component name',
         validate: value => value && value.length >= 3,
+      },
+      {
+        type: 'confirm',
+        name: 'redux',
+        message: `Is your Component connnected to ${chalk.blue('Redux')}?`,
       },
     ];
 
