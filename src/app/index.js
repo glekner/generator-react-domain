@@ -1,36 +1,32 @@
 import Generator from 'yeoman-generator';
 import chalk from 'chalk';
+import { initializePrompts } from '../helpers';
 
 class InitialGenerator extends Generator {
+  constructor(args, opts) {
+    super(args, opts);
+
+    this.argument('path', { type: String, required: false });
+    this.argument('name', { type: String, required: false });
+    this.option('redux');
+  }
+
   async prompting() {
-    this.log((`\nWelcome to ${chalk.blue('react-domain-generator')}!\n`));
+    this.log(`\nWelcome to ${chalk.blue('react-domain-generator')}!\n`);
 
-    const prompts = [
-      {
-        type: 'input',
-        name: 'path',
-        message: 'Enter your Components path',
-        default: 'src/components',
-        validate: value => value && value.length >= 3,
-      },
-      {
-        type: 'input',
-        name: 'name',
-        message: 'Enter your Component name',
-        validate: value => value && value.length >= 3,
-      },
-      {
-        type: 'confirm',
-        name: 'redux',
-        message: `Is your Component connnected to ${chalk.blue('Redux')}?`,
-      },
-    ];
-
+    const prompts = initializePrompts(this.options);
     this.answers = await this.prompt(prompts);
   }
 
   writing() {
-    this.composeWith(require.resolve('../component'), { name: this.answers.name, path: this.answers.path });
+    const results = { ...this.options, ...this.answers };
+    const genProps = {
+      name: results.name,
+      path: results.path,
+    };
+
+    this.composeWith(require.resolve('../gen/component'), genProps);
+    if (results.redux) this.composeWith(require.resolve('../gen/redux'), genProps);
   }
 }
 

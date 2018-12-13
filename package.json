@@ -18,6 +18,7 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "coveralls": "^3.0.2",
@@ -40,7 +41,7 @@
     "build": "babel src -d lib/generators --copy-files",
     "test": "jest",
     "pretest": "eslint .",
-    "start": "npm run build && sudo npm link && yo react-domain"
+    "start": "npm run build && npm link && yo react-domain"
   },
   "repository": {
     "type": "git",
