@@ -6,7 +6,9 @@ describe('generator-react-domain:app', () => {
   const generatorPath = path.join(__dirname, '../src/app');
 
   it('yo react-domain', async () => {
-    await helpers.run(generatorPath).withPrompts({ path: 'some/path', name: 'component', redux: true });
+    await helpers
+      .run(generatorPath)
+      .withPrompts({ path: 'some/path', name: 'component', redux: true });
 
     assert(1, 1);
   });

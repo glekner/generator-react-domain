@@ -7,9 +7,11 @@ class ComponentGenerator extends Generator {
     const componentName = toPascalCase(this.options.name);
 
     const destinationPath = this.destinationPath(
-      `${componentsPath}/${componentName}/${componentName}.js`,
+      `${componentsPath}/${componentName}/${componentName}.js`
     );
-    this.fs.copyTpl(this.templatePath('component.js'), destinationPath, { name: componentName });
+    this.fs.copyTpl(this.templatePath('component.js'), destinationPath, {
+      name: componentName
+    });
   }
 }
 

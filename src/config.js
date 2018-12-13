@@ -1,5 +1,8 @@
 export const componentsPath = 'src/components';
-
-export default {
-  componentsPath,
-};
+export const reduxFiles = [
+  'actions',
+  'constants',
+  'index',
+  'reducer',
+  'selectors'
+];

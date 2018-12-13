@@ -1,13 +1,8 @@
 {
-  "generator-node": {
-    "promptValues": {
-      "authorEmail": "gilad215@gmail.com",
-      "authorUrl": "https://github.com/glekner/generator-react-domain"
-    }
-  },
   "generator-react-domain": {
     "promptValues": {
       "path": "src/components"
-    }
+    },
+    "templatesPath": "overrides"
   }
 }

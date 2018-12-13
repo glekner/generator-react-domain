@@ -22,11 +22,12 @@ class InitialGenerator extends Generator {
     const results = { ...this.options, ...this.answers };
     const genProps = {
       name: results.name,
-      path: results.path,
+      path: results.path
     };
 
     this.composeWith(require.resolve('../gen/component'), genProps);
-    if (results.redux) this.composeWith(require.resolve('../gen/redux'), genProps);
+    if (results.redux)
+      this.composeWith(require.resolve('../gen/redux'), genProps);
   }
 }
 
