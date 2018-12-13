@@ -9,7 +9,7 @@ const initializePrompts = (args) => {
     prompts.push({
       type: 'input',
       name: 'path',
-      message: 'Enter you Components path',
+      message: 'Enter your Components path',
       default: 'src/components',
       validate: value => value && value.length >= 3,
     });

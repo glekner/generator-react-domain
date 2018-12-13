@@ -12,7 +12,7 @@ class InitialGenerator extends Generator {
   }
 
   async prompting() {
-    this.log(`\nWelcome to ${chalk.blue('react-domain-generator')}!\n`);
+    this.log(`\n${chalk.bold(chalk.blue('react-domain-generator'))}\n`);
 
     const prompts = initializePrompts(this.options);
     this.answers = await this.prompt(prompts);
