@@ -6,9 +6,4 @@ export const REDUX_TPL = [
   'selectors'
 ];
 
-export const REACT_TPL = [
-  'component',
-  'scss',
-  'fixtures',
-  'helper'
-]
+export const REACT_TPL = ['component', 'scss', 'fixtures', 'helper'];

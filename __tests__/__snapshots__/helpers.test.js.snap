@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helpers caseNames 1`] = `
+Object {
+  "name": "CoMpoNent",
+  "name_lower": "coMpoNent",
+  "name_upper": "COMPONENT",
+}
+`;
+
+exports[`helpers getPath 1`] = `"some/path/ComponentName/index.js"`;
+
+exports[`helpers initializePrompts 1`] = `
+Array [
+  Object {
+    "default": "src/components",
+    "message": "Enter your Components path",
+    "name": "path",
+    "type": "input",
+    "validate": [Function],
+  },
+  Object {
+    "message": "Enter your Component name",
+    "name": "name",
+    "type": "input",
+    "validate": [Function],
+  },
+  Object {
+    "message": "Is your Component connected to [34mRedux[39m?",
+    "name": "redux",
+    "type": "confirm",
+  },
+]
+`;

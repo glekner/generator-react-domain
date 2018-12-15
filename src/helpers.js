@@ -2,6 +2,8 @@ import chalk from 'chalk';
 import toPascalCase from 'to-pascal-case';
 import { camelCase } from 'lodash';
 
+const validatePrompt = value => value && value.length >= 3;
+
 const initializePrompts = (args, config) => {
   const prompts = [];
 
@@ -11,7 +13,7 @@ const initializePrompts = (args, config) => {
       name: 'path',
       message: 'Enter your Components path',
       default: 'src/components',
-      validate: value => value && value.length >= 3
+      validate: validatePrompt
     });
   }
   if (!args.name) {
@@ -19,7 +21,7 @@ const initializePrompts = (args, config) => {
       type: 'input',
       name: 'name',
       message: 'Enter your Component name',
-      validate: value => value && value.length >= 3
+      validate: validatePrompt
     });
   }
   if (!args.redux) {
@@ -58,4 +60,11 @@ const caseNames = name => ({
   name_upper: name.replace(/\s+/g, '').toUpperCase()
 });
 
-export { toPascalCase, camelCase, initializePrompts, getPath, caseNames };
+export {
+  toPascalCase,
+  camelCase,
+  initializePrompts,
+  validatePrompt,
+  getPath,
+  caseNames
+};
