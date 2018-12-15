@@ -1,4 +1,7 @@
 # generator-react-domain
+[![Coverage Status](https://coveralls.io/repos/github/glekner/generator-react-domain/badge.svg?branch=master)](https://coveralls.io/github/glekner/generator-react-domain?branch=master)
+[![Build Status](https://travis-ci.org/glekner/generator-react-domain.svg?branch=master)](https://travis-ci.org/glekner/generator-react-domain)
+
  This Generator helps you create connected React components with the Domain file structure :snowflake:
 
  ```
