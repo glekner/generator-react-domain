@@ -1,8 +1,6 @@
 {
   "generator-react-domain": {
-    "promptValues": {
-      "path": "src/components"
-    },
-    "templatesPath": "overrides"
+    "templatesPath": "overrides",
+    "componentsPath": "src/components"
   }
 }

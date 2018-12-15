@@ -2,10 +2,10 @@ import chalk from 'chalk';
 import toPascalCase from 'to-pascal-case';
 import { camelCase } from 'lodash';
 
-const initializePrompts = args => {
+const initializePrompts = (args, config) => {
   const prompts = [];
 
-  if (!args.path) {
+  if (!args.path && !config.componentsPath) {
     prompts.push({
       type: 'input',
       name: 'path',
@@ -53,9 +53,9 @@ const getPath = (path, name, type) => {
 };
 
 const caseNames = name => ({
-  name,
+  name: toPascalCase(name),
   name_lower: camelCase(name),
-  name_upper: name.toUpperCase()
+  name_upper: name.replace(/\s+/g, '').toUpperCase()
 });
 
 export { toPascalCase, camelCase, initializePrompts, getPath, caseNames };

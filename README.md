@@ -42,7 +42,8 @@ yo react-domain src/components ComponentName
 ```
 {
   "generator-react-domain": {
-    "templatesPath": "path to your templates folder"
+    "templatesPath": "path to your templates folder",
+    "componentsPath": "src/components"
   }
 }
 ```
@@ -68,4 +69,4 @@ All Templates receive the following props
 ```
 ## License
 
-MIT &copy; [Gilad Lekner](https://github.com/glekner)
+[MIT](https://github.com/glekner/generator-react-domain/blob/master/LICENSE)

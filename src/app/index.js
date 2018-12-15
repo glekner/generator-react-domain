@@ -14,7 +14,7 @@ class InitialGenerator extends Generator {
   async prompting() {
     this.log(`\n${chalk.bold(chalk.blue('react-domain-generator'))}\n`);
 
-    const prompts = initializePrompts(this.options);
+    const prompts = initializePrompts(this.options, this.config.getAll());
     this.answers = await this.prompt(prompts);
     this.results = { ...this.options, ...this.answers };
   }
@@ -22,7 +22,7 @@ class InitialGenerator extends Generator {
   writing() {
     const genProps = {
       name: this.results.name,
-      path: this.results.path
+      path: this.results.path || this.config.get('componentsPath')
     };
 
     this.composeWith(require.resolve('../gen/component'), genProps);
