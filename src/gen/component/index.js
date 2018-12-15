@@ -1,17 +1,9 @@
-import Generator from 'yeoman-generator';
-import { toPascalCase } from '../../helpers';
+import BaseGenerator from '../base';
+import { REACT_TPL } from '../../constants';
 
-class ComponentGenerator extends Generator {
+class ComponentGenerator extends BaseGenerator {
   writing() {
-    const componentsPath = this.options.path;
-    const componentName = toPascalCase(this.options.name);
-
-    const destinationPath = this.destinationPath(
-      `${componentsPath}/${componentName}/${componentName}.js`
-    );
-    this.fs.copyTpl(this.templatePath('component.js'), destinationPath, {
-      name: componentName
-    });
+    this.copyTemplates(REACT_TPL, this.options.name, this.options.path);
   }
 }
 

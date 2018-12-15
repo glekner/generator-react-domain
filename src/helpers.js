@@ -36,8 +36,9 @@ const getPath = (path, name) => {
   const dirPath = `${path}/${name}`;
   return {
     component: `${dirPath}/${name}.js`,
-    scss: `${dirPath}/${name.toLowerCase()}scss`,
+    scss: `${dirPath}/${name.toLowerCase()}.scss`,
     fixtures: `${dirPath}/${name}.fixtures.js`,
+    helper: `${dirPath}/${name}Helper.js`,
     actions: `${dirPath}/${name}Actions.js`,
     reducer: `${dirPath}/${name}Reducer.js`,
     constants: `${dirPath}/${name}Constants.js`,
