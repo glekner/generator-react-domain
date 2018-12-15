@@ -46,4 +46,10 @@ const getPath = (path, name) => {
   };
 };
 
-export { toPascalCase, camelCase, initializePrompts, getPath };
+const caseNames = name => ({
+  name,
+  name_lower: camelCase(name),
+  name_upper: name.toUpperCase()
+});
+
+export { toPascalCase, camelCase, initializePrompts, getPath, caseNames };
