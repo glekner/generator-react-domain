@@ -32,19 +32,23 @@ const initializePrompts = args => {
   return prompts;
 };
 
-const getPath = (path, name) => {
-  const dirPath = `${path}/${name}`;
-  return {
-    component: `${dirPath}/${name}.js`,
-    scss: `${dirPath}/${name.toLowerCase()}.scss`,
-    fixtures: `${dirPath}/${name}.fixtures.js`,
-    helper: `${dirPath}/${name}Helper.js`,
-    actions: `${dirPath}/${name}Actions.js`,
-    reducer: `${dirPath}/${name}Reducer.js`,
-    constants: `${dirPath}/${name}Constants.js`,
-    selectors: `${dirPath}/${name}Selectors.js`,
-    index: `${dirPath}/index.js`
-  };
+const getPath = (path, name, type) => {
+  switch (type) {
+    case 'index':
+    return `${path}/${name}/index.js`;
+    
+    case 'component':
+    return `${path}/${name}/${name}.js`;
+
+    case 'scss':
+    return `${path}/${name}/${name.toLowerCase()}.scss`;
+
+    case 'fixtures':
+    return `${path}/${name}/${name}.fixtures.js`;
+  
+    default:
+    return `${path}/${name}/${toPascalCase(`${name} ${type}`)}.js`;
+  }
 };
 
 const caseNames = name => ({

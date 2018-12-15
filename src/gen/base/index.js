@@ -1,11 +1,8 @@
 import Generator from 'yeoman-generator';
-import { toPascalCase, getPath, caseNames } from '../../helpers';
+import { getPath, caseNames } from '../../helpers';
 
 class BaseGenerator extends Generator {
   copyTemplates(templates, name, path) {
-    const componentName = toPascalCase(name);
-    const paths = getPath(path, componentName);
-
     // check if consumer has templates
     const consumerTemplatesPath = this.config.get('templatesPath');
     const templatePath = file => {
@@ -19,8 +16,8 @@ class BaseGenerator extends Generator {
     templates.forEach(file =>
       this.fs.copyTpl(
         templatePath(file),
-        this.destinationPath(paths[file]),
-        caseNames(componentName)
+        this.destinationPath(getPath(path, name, file)),
+        caseNames(name)
       )
     );
   }

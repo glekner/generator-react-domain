@@ -16,18 +16,26 @@ class InitialGenerator extends Generator {
 
     const prompts = initializePrompts(this.options);
     this.answers = await this.prompt(prompts);
+    this.results = { ...this.options, ...this.answers };
   }
 
   writing() {
-    const results = { ...this.options, ...this.answers };
     const genProps = {
-      name: results.name,
-      path: results.path
+      name: this.results.name,
+      path: this.results.path
     };
 
     this.composeWith(require.resolve('../gen/component'), genProps);
-    if (results.redux)
+    if (this.results.redux)
       this.composeWith(require.resolve('../gen/redux'), genProps);
+  }
+
+  end() {
+    this.log(
+      `\n${chalk.bold(
+        chalk.greenBright('Thank you for using react-domain Generator!')
+      )}\n`
+    );
   }
 }
 
