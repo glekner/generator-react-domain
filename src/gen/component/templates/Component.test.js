@@ -3,7 +3,7 @@ import { testComponentSnapshotsWithFixtures } from 'react-redux-test-utils';
 import <%= name %> from '../<%= name %>';
 
 const fixtures = {
-  'render without Props': {}
+  'render without Props': {},
   /** fixtures, props for the component */
 };
 

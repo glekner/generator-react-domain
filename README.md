@@ -55,7 +55,7 @@ This generator is using an external package called [react-redux-test-utils](http
 {
   "generator-react-domain": {
     "templatesPath": "path to your templates folder",
-    "componentsPath": "src/components"
+    "componentsPath": "destination to your components folder"
   }
 }
 ```

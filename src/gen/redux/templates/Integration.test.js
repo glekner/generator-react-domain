@@ -7,6 +7,7 @@ describe('<%= name %> integration test', () => {
   it('should flow', async () => {
     const integrationTestHelper = new IntegrationTestHelper(reducers);
     const component = integrationTestHelper.mount(<<%= name %> />);
+    component.update();
     /** Create a Flow test */
   });
 });
