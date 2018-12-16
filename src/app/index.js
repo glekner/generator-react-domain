@@ -30,6 +30,10 @@ class InitialGenerator extends Generator {
       this.composeWith(require.resolve('../gen/redux'), genProps);
   }
 
+  install() {
+    this.npmInstall(['react-redux-test-utils'])
+  }
+
   end() {
     this.log(
       `\n${chalk.bold(

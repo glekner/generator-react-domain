@@ -4,19 +4,25 @@
 
  This Generator helps you create connected React components with the Domain file structure :snowflake:
 
- ```
- Component/
---Component.js
---component.scss
---Component.fixtures.js
---ComponentHelper.js
---ComponentActions.js
---ComponentConstants.js
---ComponentReducer.js
---ComponentSelectors.js
---index.js
+ ```sh
+ $ tree
+.
+├── Component.fixtures.js
+├── Component.js
+├── ComponentActions.js
+├── ComponentConstants.js
+├── ComponentHelper.js
+├── ComponentReducer.js
+├── ComponentSelectors.js
+├── __tests__
+│   ├── Component.test.js
+│   ├── ComponentActions.test.js
+│   ├── ComponentIntegration.test.js
+│   ├── ComponentReducer.test.js
+│   └── ComponentSelectors.test.js
+├── component.scss
+└── index.js
 ```
-Most files are created with prewritten templates which can be replaced with your own.
 
 ## Usage
 
@@ -35,6 +41,9 @@ yo react-domain src/components ComponentName
 
 - `--redux` - Create Redux files.
 
+## Tests
+This generator is using an external package called [react-redux-test-utils](https://github.com/sharvit/react-redux-test-utils) to create light and readable test templates for your components. The package uses `enzyme` at its core.
+
 ## Replacing Templates
  
 *To learn how to create Templates, refer to [ejs.co](https://ejs.co/)*
@@ -42,7 +51,7 @@ yo react-domain src/components ComponentName
 
 1) create a `.yo-rc.json` file in your project's root folder and fill it:
 
-```
+```sh
 {
   "generator-react-domain": {
     "templatesPath": "path to your templates folder",
@@ -54,15 +63,21 @@ yo react-domain src/components ComponentName
 
 | File  | Description | Has Template
 | ------------- | ------------- | ------------- |
-| component.js |  Component  |  :white_check_mark:
-| fixtures.js  | Fixtures/Mocks  | 
-| helper.js | Helper methods  |  
-| scss.js  | SCSS File | 
-| actions.js | Redux Actions  |  :white_check_mark:
-| reducer.js  | Redux Reducer  |  :white_check_mark:
-| selectors.js  | Redux Selectors  |  :white_check_mark:
-| constants.js  | Constants  |  :white_check_mark:
+| Component.js |  Component  |  :white_check_mark:
+| Component.test.js |  Component Test  |  :white_check_mark:
+| Actions.js | Redux Actions  |  :white_check_mark:
+| Actions.test.js |  Actions Test  |  :white_check_mark:
+| Reducer.js  | Redux Reducer  |  :white_check_mark:
+| Reducer.test.js |  Reducer Test  |  :white_check_mark:
+| Selectors.js  | Redux Selectors  |  :white_check_mark:
+| Selectors.test.js |  Selectors Test  |  :white_check_mark:
+| Integration.test.js  | Redux Flow Test  |  :white_check_mark:
+| Constants.js  | Constants  |  :white_check_mark:
 | index.js  | Index file  |  :white_check_mark:
+| Helper.js | Helper methods  |   
+| scss.js  | SCSS File |
+| fixtures.js  | Fixtures/Mocks  | 
+
 
 All Templates receive the following props
 ```sh
