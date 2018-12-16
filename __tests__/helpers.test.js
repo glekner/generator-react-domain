@@ -29,7 +29,7 @@ describe('helpers', () => {
   it('getPath', () => {
     const paths = {
     indexPath: getPath('some/path', 'component name', 'index'),
-    testPath: getPath('some/path', 'component name', 'index.test'),
+    testPath: getPath('some/path', 'component name', 'index_test'),
     componentTestPath: getPath('some/path', 'component name', 'component.test'),
     scssPath: getPath('some/path', 'component name', 'scss'),
     fixturesPath: getPath('some/path', 'component name', 'fixtures'),

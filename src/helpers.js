@@ -40,7 +40,9 @@ const getPath = (path, name, type) => {
     if (type.includes('component'))
       return `${path}/${pascalName}/__tests__/${pascalName}.test.js`;
 
-    return `${path}/${pascalName}/__tests__/${pascalName}${type}.js`;
+    return `${path}/${pascalName}/__tests__/${toPascalCase(
+      `${name} ${type.split('_')[0]}`
+    )}.test.js`;
   }
 
   switch (type) {

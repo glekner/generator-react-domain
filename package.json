@@ -55,6 +55,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "lodash": "^4.17.11",
+    "react-redux-test-utils": "^0.1.1",
     "to-pascal-case": "^1.0.0",
     "yeoman-generator": "^2.0.1"
   },

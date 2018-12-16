@@ -15,7 +15,7 @@ Object {
   "fixturesPath": "some/path/ComponentName/ComponentName.fixtures.js",
   "indexPath": "some/path/ComponentName/index.js",
   "scssPath": "some/path/ComponentName/componentName.scss",
-  "testPath": "some/path/ComponentName/__tests__/ComponentNameindex.test.js",
+  "testPath": "some/path/ComponentName/__tests__/ComponentNameIndex.test.js",
 }
 `;
 
