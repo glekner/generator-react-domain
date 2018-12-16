@@ -8,7 +8,15 @@ Object {
 }
 `;
 
-exports[`helpers getPath 1`] = `"some/path/ComponentName/index.js"`;
+exports[`helpers getPath 1`] = `
+Object {
+  "actionsPath": "some/path/ComponentName/ComponentNameActions.js",
+  "fixturesPath": "some/path/ComponentName/ComponentName.fixtures.js",
+  "indexPath": "some/path/ComponentName/index.js",
+  "scssPath": "some/path/ComponentName/componentName.scss",
+  "testPath": "some/path/ComponentName/__tests__/ComponentNameindex.test.js",
+}
+`;
 
 exports[`helpers initializePrompts 1`] = `
 Array [

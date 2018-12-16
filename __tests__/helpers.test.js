@@ -27,8 +27,14 @@ describe('helpers', () => {
   });
 
   it('getPath', () => {
-    const path = getPath('some/path', 'component name', 'index');
-    expect(path).toMatchSnapshot();
+    const paths = {
+    indexPath: getPath('some/path', 'component name', 'index'),
+    testPath: getPath('some/path', 'component name', 'index.test'),
+    scssPath: getPath('some/path', 'component name', 'scss'),
+    fixturesPath: getPath('some/path', 'component name', 'fixtures'),
+    actionsPath: getPath('some/path', 'component name', 'Actions')
+    }
+    expect(paths).toMatchSnapshot();
   });
 
   it('caseNames', () => {

@@ -1,9 +1,23 @@
 export const REDUX_TPL = [
-  'actions',
-  'constants',
+  'Actions',
+  'Constants',
   'index',
-  'reducer',
-  'selectors'
+  'Reducer',
+  'Selectors',
+
+  // Tests
+  'Actions.test',
+  'Reducer.test',
+  'Selectors.test',
+  'Integration.test'
 ];
 
-export const REACT_TPL = ['component', 'scss', 'fixtures', 'helper'];
+export const REACT_TPL = [
+  'Component',
+  'scss',
+  'fixtures',
+  'Helper',
+
+  // Tests
+  'Component.test'
+];
