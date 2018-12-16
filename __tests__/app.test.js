@@ -16,13 +16,13 @@ describe('generator-react-domain:app', () => {
         );
       })
       .withPrompts({ name: 'component', redux: false })
-      .withLocalConfig({ componentsPath: 'src/components' })
+      .withLocalConfig({ componentsPath: 'src/components', "test-utils-installed": true })
       .then(dir => {
         assert.file(`${dir}/component.js`);
       });
   });
 
-  it('react-domain flow w/redux', async () => {
+  it('react-domain flow w/redux and npm install', async () => {
     await helpers
       .run(generatorPath)
       .inTmpDir(dir => {

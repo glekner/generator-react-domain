@@ -1,6 +1,7 @@
 {
   "generator-react-domain": {
     "templatesPath": "overrides",
-    "componentsPath": "src/components"
+    "componentsPath": "src/components",
+    "test-utils-installed": true
   }
 }

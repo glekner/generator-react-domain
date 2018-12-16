@@ -34,7 +34,13 @@ class InitialGenerator extends Generator {
     this.log(
       `\n${chalk.bold(chalk.blueBright('Installing required packages...'))}\n`
     );
-    this.npmInstall(['react-redux-test-utils']);
+    if (!this.config.get('test-utils-installed')) {
+      this.npmInstall(['react-redux-test-utils'], { saveDev: true });
+      this.config.set('test-utils-installed', true);
+    }
+    this.log(
+      `\n${chalk.bold(chalk.blueBright('...done'))}\n`
+    );
   }
 
   end() {
