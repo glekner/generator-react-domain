@@ -1,6 +1,6 @@
 {
   "name": "generator-react-domain",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate React Components with Domain-Driven File Structuring",
   "homepage": "https://github.com/glekner/generator-react-domain#readme",
   "author": "Gilad Lekner",
@@ -53,6 +53,7 @@
     "url": "https://github.com/glekner/generator-react-domain/issues"
   },
   "dependencies": {
+    "@babel/runtime": "^7.2.0",
     "chalk": "^2.4.1",
     "lodash": "^4.17.11",
     "to-pascal-case": "^1.0.0",
