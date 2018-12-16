@@ -37,7 +37,7 @@ const initializePrompts = (args, config) => {
 const getPath = (path, name, type) => {
   const pascalName = toPascalCase(name);
   if (type.includes('test')) {
-    if (type.includes('Component'))
+    if (type.includes('component'))
       return `${path}/${pascalName}/__tests__/${pascalName}.test.js`;
 
     return `${path}/${pascalName}/__tests__/${pascalName}${type}.js`;
@@ -47,7 +47,7 @@ const getPath = (path, name, type) => {
     case 'index':
       return `${path}/${pascalName}/index.js`;
 
-    case 'Component':
+    case 'component':
       return `${path}/${pascalName}/${pascalName}.js`;
 
     case 'fixtures':
@@ -57,7 +57,7 @@ const getPath = (path, name, type) => {
       return `${path}/${pascalName}/${camelCase(name)}.scss`;
 
     default:
-      return `${path}/${pascalName}/${pascalName}${type}.js`;
+      return `${path}/${pascalName}/${toPascalCase(`${name} ${type}`)}.js`;
   }
 };
 

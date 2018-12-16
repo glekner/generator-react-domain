@@ -11,7 +11,7 @@ describe('generator-react-domain:app', () => {
       .run(generatorPath)
       .inTmpDir(dir => {
         fs.copyFileSync(
-          path.join(__dirname, '../src/gen/component/templates/component.js'),
+          path.join(__dirname, '__mocks__/component.js'),
           path.join(dir, 'component.js')
         );
       })
@@ -44,8 +44,8 @@ describe('generator-react-domain:app', () => {
       .inTmpDir(dir => {
         fs.mkdirSync(`${dir}/templates`);
         fs.copyFileSync(
-          path.join(__dirname, '__mocks__/component.js'),
-          path.join(`${dir}/templates`, 'component.js')
+          path.join(__dirname, '__mocks__/Component.js'),
+          path.join(`${dir}/templates`, 'Component.js')
         );
       })
       .withOptions({ name: 'component', path: 'src/components' })

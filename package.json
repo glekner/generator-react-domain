@@ -56,13 +56,12 @@
     "chalk": "^2.4.1",
     "lodash": "^4.17.11",
     "to-pascal-case": "^1.0.0",
-    "yeoman-generator": "^2.0.1",
-    "yosay": "^2.0.2"
+    "yeoman-generator": "^2.0.1"
   },
   "jest": {
     "testEnvironment": "node",
     "testMatch": [
-      "**/__tests__/**/*.test.js"
+      "**/__tests__/*.test.js"
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
