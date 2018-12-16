@@ -63,18 +63,18 @@ This generator is using an external package called [react-redux-test-utils](http
 
 | File  | Description | Has Template
 | ------------- | ------------- | ------------- |
-| Component.js |  Component  |  :white_check_mark:
-| Component.test.js |  Component Test  |  :white_check_mark:
-| Actions.js | Redux Actions  |  :white_check_mark:
-| Actions.test.js |  Actions Test  |  :white_check_mark:
-| Reducer.js  | Redux Reducer  |  :white_check_mark:
-| Reducer.test.js |  Reducer Test  |  :white_check_mark:
-| Selectors.js  | Redux Selectors  |  :white_check_mark:
-| Selectors.test.js |  Selectors Test  |  :white_check_mark:
-| Integration.test.js  | Redux Flow Test  |  :white_check_mark:
-| Constants.js  | Constants  |  :white_check_mark:
+| component.js |  Component  |  :white_check_mark:
+| component_test.js |  Component Test  |  :white_check_mark:
+| actions.js | Redux Actions  |  :white_check_mark:
+| actions_test.js |  Actions Test  |  :white_check_mark:
+| reducer.js  | Redux Reducer  |  :white_check_mark:
+| reducer_test.js |  Reducer Test  |  :white_check_mark:
+| selectors.js  | Redux Selectors  |  :white_check_mark:
+| selectors_test.js |  Selectors Test  |  :white_check_mark:
+| integration_test.js  | Redux Flow Test  |  :white_check_mark:
+| constants.js  | Constants  |  :white_check_mark:
 | index.js  | Index file  |  :white_check_mark:
-| Helper.js | Helper methods  |   
+| helper.js | Helper methods  |   
 | scss.js  | SCSS File |
 | fixtures.js  | Fixtures/Mocks  | 
 
