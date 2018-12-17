@@ -12,7 +12,8 @@
   "plugins": [
     ["transform-runtime", {
       "polyfill": true,
-      "regenerator": true
+      "regenerator": true,
+      "helpers": false,
     }],
     ["transform-object-rest-spread"]
   ],
