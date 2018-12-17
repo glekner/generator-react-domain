@@ -10,14 +10,14 @@
     ]
   ],
   "plugins": [
-    ["transform-runtime", {
-      "polyfill": true,
-      "regenerator": true,
-      "helpers": false,
-    }],
+    [
+      "transform-runtime",
+      {
+        "polyfill": true,
+        "regenerator": true
+      }
+    ],
     ["transform-object-rest-spread"]
   ],
-  "ignore": [
-    "**/templates/*"
-  ]
+  "ignore": ["**/templates/*"]
 }
