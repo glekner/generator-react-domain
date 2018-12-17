@@ -1,6 +1,6 @@
 {
   "name": "generator-react-domain",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Generate React Components with Domain-Driven File Structuring",
   "homepage": "https://github.com/glekner/generator-react-domain#readme",
   "author": "Gilad Lekner",
