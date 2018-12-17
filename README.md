@@ -27,11 +27,8 @@
 ## Usage
 
 ```sh
-# install yo
-npm install --global yo
-
-# install the generator
-npm install --global generator-react-domain
+# install
+npm install --global yo generator-react-domain
 
 # run it        # destination  # name
 yo react-domain src/components ComponentName
@@ -71,9 +68,9 @@ This generator is using an external package called [react-redux-test-utils](http
 | reducer_test.js |  Reducer Test  |  :white_check_mark:
 | selectors.js  | Redux Selectors  |  :white_check_mark:
 | selectors_test.js |  Selectors Test  |  :white_check_mark:
+| index.js  | Index file  |  :white_check_mark:
 | integration_test.js  | Redux Flow Test  |  :white_check_mark:
 | constants.js  | Constants  |  :white_check_mark:
-| index.js  | Index file  |  :white_check_mark:
 | helper.js | Helper methods  |   
 | scss.js  | SCSS File |
 | fixtures.js  | Fixtures/Mocks  | 
