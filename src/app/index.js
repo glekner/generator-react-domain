@@ -22,31 +22,31 @@ class InitialGenerator extends Generator {
   writing() {
     const genProps = {
       name: this.results.name,
-      path: this.results.path || this.config.get('componentsPath')
+      path: this.results.path || this.config.get('componentsPath'),
+      redux: this.results.redux || this.config.get('redux'),
     };
 
     this.composeWith(require.resolve('../gen/component'), genProps);
-    if (this.results.redux)
+    if (genProps.redux)
       this.composeWith(require.resolve('../gen/redux'), genProps);
   }
 
   install() {
-    this.log(
-      `\n${chalk.bold(chalk.blueBright('Installing required packages...'))}\n`
-    );
     if (!this.config.get('test-utils-installed')) {
+      this.log(
+        `\n${chalk.bold(chalk.blueBright('Installing required packages...'))}\n`
+      );
       this.npmInstall(['react-redux-test-utils'], { saveDev: true });
       this.config.set('test-utils-installed', true);
+
+      this.log(`\n${chalk.bold(chalk.blueBright('done'))}`);
     }
-    this.log(
-      `\n${chalk.bold(chalk.blueBright('...done'))}\n`
-    );
   }
 
   end() {
     this.log(
       `\n${chalk.bold(
-        chalk.greenBright('Thank you for using react-domain Generator!')
+        chalk.greenBright('done!')
       )}\n`
     );
   }

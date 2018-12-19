@@ -41,21 +41,27 @@ yo react-domain src/components ComponentName
 ## Tests
 This generator is using an external package called [react-redux-test-utils](https://github.com/sharvit/react-redux-test-utils) to create light and readable test templates for your components. The package uses `enzyme` at its core.
 
-## Replacing Templates
- 
-*To learn how to create Templates, refer to [ejs.co](https://ejs.co/)*
+## Config
 
-
-1) create a `.yo-rc.json` file in your project's root folder and fill it:
+create a `.yo-rc.json` file in your project's root folder and fill it:
 
 ```sh
 {
   "generator-react-domain": {
     "templatesPath": "path to your templates folder",
-    "componentsPath": "destination to your components folder"
+    "componentsPath": "path to your components folder",
+    "redux": "boolean, to create redux templates or not"
   }
 }
 ```
+
+## Replacing Templates
+ 
+*To learn how to create Templates, refer to [ejs.co](https://ejs.co/)*
+
+
+1) fill your `.yo-rc.json` file in your project's root folder with `templatesPath` as seen above.
+
 2. Put supported files in your templates folder
 
 | File  | Description | Has Template

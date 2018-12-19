@@ -31,8 +31,8 @@ describe('generator-react-domain:app', () => {
           path.join(dir, 'component.js')
         );
       })
-      .withPrompts({ name: 'component', redux: true })
-      .withLocalConfig({ componentsPath: 'src/components' })
+      .withPrompts({ name: 'component' })
+      .withLocalConfig({ componentsPath: 'src/components', redux: true })
       .then(dir => {
         assert.file(`${dir}/component.js`);
       });

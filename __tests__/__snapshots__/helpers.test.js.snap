@@ -34,10 +34,5 @@ Array [
     "type": "input",
     "validate": [Function],
   },
-  Object {
-    "message": "Is your Component connected to [34mRedux[39m?",
-    "name": "redux",
-    "type": "confirm",
-  },
 ]
 `;

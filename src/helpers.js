@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import toPascalCase from 'to-pascal-case';
 import { camelCase } from 'lodash';
 
@@ -22,13 +21,6 @@ const initializePrompts = (args, config) => {
       name: 'name',
       message: 'Enter your Component name',
       validate: validatePrompt
-    });
-  }
-  if (!args.redux) {
-    prompts.push({
-      type: 'confirm',
-      name: 'redux',
-      message: `Is your Component connected to ${chalk.blue('Redux')}?`
     });
   }
   return prompts;
