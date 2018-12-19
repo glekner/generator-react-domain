@@ -23,7 +23,7 @@ class InitialGenerator extends Generator {
     const genProps = {
       name: this.results.name,
       path: this.results.path || this.config.get('componentsPath'),
-      redux: this.results.redux || this.config.get('redux'),
+      redux: this.results.redux || this.config.get('redux')
     };
 
     this.composeWith(require.resolve('../gen/component'), genProps);
@@ -38,17 +38,11 @@ class InitialGenerator extends Generator {
       );
       this.npmInstall(['react-redux-test-utils'], { saveDev: true });
       this.config.set('test-utils-installed', true);
-
-      this.log(`\n${chalk.bold(chalk.blueBright('done'))}`);
     }
   }
 
   end() {
-    this.log(
-      `\n${chalk.bold(
-        chalk.greenBright('done!')
-      )}\n`
-    );
+    this.log(`\n${chalk.bold(chalk.greenBright('done!'))}\n`);
   }
 }
 
