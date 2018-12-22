@@ -62,8 +62,6 @@ const caseNames = name => ({
 });
 
 export {
-  toPascalCase,
-  camelCase,
   initializePrompts,
   validatePrompt,
   getPath,
