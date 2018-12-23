@@ -1,6 +1,7 @@
 import Generator from 'yeoman-generator';
 import chalk from 'chalk';
 import { initializePrompts } from '../helpers';
+import PACKAGES from './packages';
 
 class InitialGenerator extends Generator {
   constructor(args, opts) {
@@ -32,12 +33,16 @@ class InitialGenerator extends Generator {
   }
 
   install() {
-    if (!this.config.get('test-utils-installed')) {
+    if (!this.config.get('depsInstalled')) {
       this.log(
         `\n${chalk.bold(chalk.blueBright('Installing required packages...'))}\n`
       );
-      this.npmInstall(['react-redux-test-utils'], { saveDev: true });
-      this.config.set('test-utils-installed', true);
+      if (this.config.get('yarn')) {
+        this.yarnInstall(PACKAGES, { dev: true });
+      } else {
+        this.npmInstall(PACKAGES, { saveDev: true });
+      }
+      this.config.set('depsInstalled', true);
     }
   }
 

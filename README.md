@@ -50,7 +50,8 @@ create a `.yo-rc.json` file in your project's root folder and fill it:
   "generator-react-domain": {
     "templatesPath": "path to your templates folder",
     "componentsPath": "path to your components folder",
-    "redux": true # create redux files
+    "redux": true # create redux files,
+    "yarn": true # use yarn instead of npm
   }
 }
 ```

@@ -22,7 +22,7 @@ describe('generator-react-domain:app', () => {
       });
   });
 
-  it('react-domain flow w/redux and npm install', async () => {
+  it('react-domain flow w/redux and yarn install', async () => {
     await helpers
       .run(generatorPath)
       .inTmpDir(dir => {
@@ -32,7 +32,23 @@ describe('generator-react-domain:app', () => {
         );
       })
       .withPrompts({ name: 'component' })
-      .withLocalConfig({ componentsPath: 'src/components', redux: true })
+      .withLocalConfig({ componentsPath: 'src/components', redux: true, yarn: true })
+      .then(dir => {
+        assert.file(`${dir}/component.js`);
+      });
+  });
+
+  it('react-domain flow w/redux and no package installations', async () => {
+    await helpers
+      .run(generatorPath)
+      .inTmpDir(dir => {
+        fs.copyFileSync(
+          path.join(__dirname, '../src/gen/component/templates/component.js'),
+          path.join(dir, 'component.js')
+        );
+      })
+      .withPrompts({ name: 'component' })
+      .withLocalConfig({ componentsPath: 'src/components', redux: true, depsInstalled: true })
       .then(dir => {
         assert.file(`${dir}/component.js`);
       });

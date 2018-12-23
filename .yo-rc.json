@@ -2,6 +2,7 @@
   "generator-react-domain": {
     "templatesPath": "overrides",
     "componentsPath": "src/components",
-    "test-utils-installed": true
+    "yarn": true,
+    "depsInstalled": true
   }
 }
