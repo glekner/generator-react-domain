@@ -11,9 +11,9 @@ export const REDUX_TPL = [
 ];
 
 export const REACT_TPL = [
-  'component',
-  'scss',
-  'fixtures',
-  'helper',
-  'component_test'
+  'Component',
+  'Scss',
+  'Fixtures',
+  'Helper',
+  'Component_test'
 ];
