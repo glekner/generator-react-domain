@@ -72,4 +72,23 @@ describe('generator-react-domain:app', () => {
         assert.file(`${dir}/src/components/Component/Component.js`);
       });
   });
+
+  it('base generator flow override template w/lowercased File', async () => {
+    await helpers
+      .run(path.join(__dirname, '../src/gen/component'))
+      .inTmpDir(dir => {
+        fs.mkdirSync(`${dir}/templates`);
+        fs.copyFileSync(
+          path.join(__dirname, '__mocks__/helper.js'),
+          path.join(`${dir}/templates`, 'helper.js')
+        );
+      })
+      .withOptions({ name: 'component', path: 'src/components' })
+      .withLocalConfig({
+        templatesPath: 'templates'
+      })
+      .then(dir => {
+        assert.file(`${dir}/src/components/Component/ComponentHelper.js`);
+      });
+  });
 });

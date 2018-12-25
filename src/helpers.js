@@ -1,9 +1,10 @@
+import fs from 'fs';
 import toPascalCase from 'to-pascal-case';
 import { camelCase } from 'lodash';
 
-const validatePrompt = value => value && value.length >= 3;
+export const validatePrompt = value => value && value.length >= 3;
 
-const initializePrompts = (args, config) => {
+export const initializePrompts = (args, config) => {
   const prompts = [];
 
   if (!args.path && !config.componentsPath) {
@@ -26,7 +27,7 @@ const initializePrompts = (args, config) => {
   return prompts;
 };
 
-const getPath = (path, name, type) => {
+export const getPath = (path, name, type) => {
   const pascalName = toPascalCase(name);
   if (type.includes('test')) {
     if (type.includes('Component'))
@@ -55,10 +56,24 @@ const getPath = (path, name, type) => {
   }
 };
 
-const caseNames = name => ({
+export const caseNames = name => ({
   name: toPascalCase(name),
   name_lower: camelCase(name),
   name_upper: name.replace(/\s+/g, '').toUpperCase()
 });
 
-export { initializePrompts, validatePrompt, getPath, caseNames };
+export const getTemplatePath = (file, consumerPath, sourceRoot) => {
+  const lowerCasedName = file.toLowerCase();
+
+  if (consumerPath) {
+    if (fs.existsSync(`${consumerPath}/${file}.js`))
+      return `${consumerPath}/${file}.js`;
+
+    if (fs.existsSync(`${consumerPath}/${lowerCasedName}.js`))
+      return `${consumerPath}/${lowerCasedName}.js`;
+  }
+
+  if (fs.existsSync(`${sourceRoot}/${file}.js`)) return `${sourceRoot}/${file}.js`;
+
+  return `${sourceRoot}/${lowerCasedName}.js`;
+};
