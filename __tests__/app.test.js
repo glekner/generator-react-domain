@@ -11,14 +11,14 @@ describe('generator-react-domain:app', () => {
       .run(generatorPath)
       .inTmpDir(dir => {
         fs.copyFileSync(
-          path.join(__dirname, '__mocks__/component.js'),
-          path.join(dir, 'component.js')
+          path.join(__dirname, '__mocks__/Component.js'),
+          path.join(dir, 'Component.js')
         );
       })
       .withPrompts({ name: 'component', redux: false })
       .withLocalConfig({ componentsPath: 'src/components', "test-utils-installed": true })
       .then(dir => {
-        assert.file(`${dir}/component.js`);
+        assert.file(`${dir}/Component.js`);
       });
   });
 
@@ -27,14 +27,14 @@ describe('generator-react-domain:app', () => {
       .run(generatorPath)
       .inTmpDir(dir => {
         fs.copyFileSync(
-          path.join(__dirname, '../src/gen/component/templates/component.js'),
-          path.join(dir, 'component.js')
+          path.join(__dirname, '../src/gen/component/templates/Component.js'),
+          path.join(dir, 'Component.js')
         );
       })
       .withPrompts({ name: 'component' })
       .withLocalConfig({ componentsPath: 'src/components', redux: true, yarn: true })
       .then(dir => {
-        assert.file(`${dir}/component.js`);
+        assert.file(`${dir}/Component.js`);
       });
   });
 
@@ -43,14 +43,14 @@ describe('generator-react-domain:app', () => {
       .run(generatorPath)
       .inTmpDir(dir => {
         fs.copyFileSync(
-          path.join(__dirname, '../src/gen/component/templates/component.js'),
-          path.join(dir, 'component.js')
+          path.join(__dirname, '../src/gen/component/templates/Component.js'),
+          path.join(dir, 'Component.js')
         );
       })
       .withPrompts({ name: 'component' })
       .withLocalConfig({ componentsPath: 'src/components', redux: true, depsInstalled: true })
       .then(dir => {
-        assert.file(`${dir}/component.js`);
+        assert.file(`${dir}/Component.js`);
       });
   });
 
@@ -60,8 +60,8 @@ describe('generator-react-domain:app', () => {
       .inTmpDir(dir => {
         fs.mkdirSync(`${dir}/templates`);
         fs.copyFileSync(
-          path.join(__dirname, '__mocks__/component.js'),
-          path.join(`${dir}/templates`, 'component.js')
+          path.join(__dirname, '__mocks__/Component.js'),
+          path.join(`${dir}/templates`, 'Component.js')
         );
       })
       .withOptions({ name: 'component', path: 'src/components' })

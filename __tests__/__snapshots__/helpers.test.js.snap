@@ -11,10 +11,10 @@ Object {
 exports[`helpers getPath 1`] = `
 Object {
   "actionsPath": "some/path/ComponentName/ComponentNameActions.js",
-  "componentTestPath": "some/path/ComponentName/__tests__/ComponentName.test.js",
-  "fixturesPath": "some/path/ComponentName/ComponentName.fixtures.js",
+  "componentTestPath": "some/path/ComponentName/__tests__/ComponentNameComponentTest.test.js",
+  "fixturesPath": "some/path/ComponentName/ComponentNameFixtures.js",
   "indexPath": "some/path/ComponentName/index.js",
-  "scssPath": "some/path/ComponentName/componentName.scss",
+  "scssPath": "some/path/ComponentName/ComponentNameScss.js",
   "testPath": "some/path/ComponentName/__tests__/ComponentNameIndex.test.js",
 }
 `;
