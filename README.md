@@ -63,27 +63,29 @@ create a `.yo-rc.json` file in your project's root folder and fill it:
 
 1) fill your `.yo-rc.json` file in your project's root folder with `templatesPath` as seen above.
 
-2. Put supported files in your templates folder
+2. Put supported files in your templates folder, make sure to be case-sensitive.
 
 | File  | Description | Has Template
 | ------------- | ------------- | ------------- |
-| component.js |  Component  |  :white_check_mark:
-| component_test.js |  Component Test  |  :white_check_mark:
-| actions.js | Redux Actions  |  :white_check_mark:
-| actions_test.js |  Actions Test  |  :white_check_mark:
-| reducer.js  | Redux Reducer  |  :white_check_mark:
-| reducer_test.js |  Reducer Test  |  :white_check_mark:
-| selectors.js  | Redux Selectors  |  :white_check_mark:
-| selectors_test.js |  Selectors Test  |  :white_check_mark:
+| Component.js |  Component  |  :white_check_mark:
+| Component_test.js |  Component Test  |  :white_check_mark:
+| Actions.js | Redux Actions  |  :white_check_mark:
+| Actions_test.js |  Actions Test  |  :white_check_mark:
+| Reducer.js  | Redux Reducer  |  :white_check_mark:
+| Reducer_test.js |  Reducer Test  |  :white_check_mark:
+| Selectors.js  | Redux Selectors  |  :white_check_mark:
+| Selectors_test.js |  Selectors Test  |  :white_check_mark:
 | index.js  | Index file  |  :white_check_mark:
-| integration_test.js  | Redux Flow Test  |  :white_check_mark:
-| constants.js  | Constants  |  :white_check_mark:
-| helper.js | Helper methods  |   
-| scss.js  | SCSS File |
-| fixtures.js  | Fixtures/Mocks  | 
+| Integration_test.js  | Redux Flow Test  |  :white_check_mark:
+| Constants.js  | Constants  |  :white_check_mark:
+| Helper.js | Helper methods  |   
+| Scss.js  | SCSS File |
+| Fixtures.js  | Fixtures/Mocks  | 
 
 
 All Templates receive the following props
+
+
 ```sh
   <%= name %>       # Pascal case name
   <%= name_upper %> # Capitalized name

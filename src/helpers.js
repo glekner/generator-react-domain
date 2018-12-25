@@ -61,9 +61,4 @@ const caseNames = name => ({
   name_upper: name.replace(/\s+/g, '').toUpperCase()
 });
 
-export {
-  initializePrompts,
-  validatePrompt,
-  getPath,
-  caseNames
-};
+export { initializePrompts, validatePrompt, getPath, caseNames };
