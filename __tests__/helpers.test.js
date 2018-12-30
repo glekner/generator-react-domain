@@ -52,4 +52,9 @@ describe('helpers', () => {
     const lowerNamePath = getTemplatePath('Helper', '', '__tests__');
     expect(lowerNamePath).toBe('__tests__/helper.js');
   });
+
+  it('getTemplatePath override w/lowercased Name', () => {
+    const lowerNamePath = getTemplatePath('Helper', './__tests__/__mocks__', '__tests__');
+    expect(lowerNamePath).toBe('./__tests__/__mocks__/helper.js');
+  });
 });

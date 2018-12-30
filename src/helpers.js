@@ -33,9 +33,8 @@ export const getPath = (path, name, type) => {
     if (type.includes('Component'))
       return `${path}/${pascalName}/__tests__/${pascalName}.test.js`;
 
-    return `${path}/${pascalName}/__tests__/${toPascalCase(
-      `${name} ${type.split('_')[0]}`
-    )}.test.js`;
+    return `${path}/${pascalName}/__tests__/${toPascalCase(name) +
+      toPascalCase(type.split('_')[0])}.test.js`;
   }
 
   switch (type) {
@@ -52,7 +51,8 @@ export const getPath = (path, name, type) => {
       return `${path}/${pascalName}/${camelCase(name)}.scss`;
 
     default:
-      return `${path}/${pascalName}/${toPascalCase(`${name} ${type}`)}.js`;
+      return `${path}/${pascalName}/${toPascalCase(name) +
+        toPascalCase(type)}.js`;
   }
 };
 
@@ -66,14 +66,15 @@ export const getTemplatePath = (file, consumerPath, sourceRoot) => {
   const lowerCasedName = file.toLowerCase();
 
   if (consumerPath) {
+    if (fs.existsSync(`${consumerPath}/${lowerCasedName}.js`))
+    return `${consumerPath}/${lowerCasedName}.js`;
+
     if (fs.existsSync(`${consumerPath}/${file}.js`))
       return `${consumerPath}/${file}.js`;
-
-    if (fs.existsSync(`${consumerPath}/${lowerCasedName}.js`))
-      return `${consumerPath}/${lowerCasedName}.js`;
   }
 
-  if (fs.existsSync(`${sourceRoot}/${file}.js`)) return `${sourceRoot}/${file}.js`;
+  if (fs.existsSync(`${sourceRoot}/${file}.js`))
+    return `${sourceRoot}/${file}.js`;
 
   return `${sourceRoot}/${lowerCasedName}.js`;
 };
