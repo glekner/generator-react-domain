@@ -3,3 +3,4 @@ coverage
 node_modules
 src/components
 .yo-rc.json
+.DS_Store
