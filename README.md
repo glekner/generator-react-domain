@@ -88,7 +88,7 @@ All Templates receive the following props
 
 ```sh
   <%= name %>       # Pascal case name
-  <%= name_upper %> # Capitalized name
+  <%= name_upper %> # Uppercased name
   <%= name_lower %> # Camel case name
 ```
 ## License
